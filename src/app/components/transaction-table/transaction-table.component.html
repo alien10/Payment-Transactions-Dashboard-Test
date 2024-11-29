@@ -1,0 +1,30 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Transaction ID</th>
+        <th>Customer Name</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.transactionId }}</td>
+        <td>{{ transaction.customerName }}</td>
+        <td>{{ transaction.amount | currency }}</td>
+        <td>
+          <span [class]="statusClass(transaction.status)">
+            {{ transaction.status }}
+          </span>
+        </td>
+        <td>{{ transaction.date | date : 'short' }}</td>
+        <td>
+          <button (click)="viewDetails(transaction)">Details</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

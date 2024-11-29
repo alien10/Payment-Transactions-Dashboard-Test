@@ -1,0 +1,14 @@
+<app-filters (filterChange)="applyFilters($event)"></app-filters>
+<app-transaction-table
+  [transactions]="filteredTransactions"
+  (onDetails)="openModal($event)"
+>
+</app-transaction-table>
+
+<ng-container *ngIf="showModal">
+  <app-transaction-view
+    [transaction]="selectedTransaction"
+    (close)="closeModal()"
+  >
+  </app-transaction-view>
+</ng-container>

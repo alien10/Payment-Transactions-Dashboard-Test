@@ -1,0 +1,22 @@
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Transaction Details</h2>
+      <button class="close-btn" (click)="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Transaction ID:</strong> {{ transaction?.transactionId }}</p>
+      <p><strong>Customer Name:</strong> {{ transaction?.customerName }}</p>
+      <p><strong>Email:</strong> {{ transaction?.email }}</p>
+      <p><strong>Phone:</strong> {{ transaction?.phone }}</p>
+      <p><strong>Amount:</strong> {{ transaction?.amount | currency }}</p>
+      <p><strong>Status:</strong> {{ transaction?.status }}</p>
+      <p><strong>Date:</strong> {{ transaction?.date | date : 'short' }}</p>
+      <p><strong>Payment Method:</strong> {{ transaction?.paymentMethod }}</p>
+      <p><strong>Description:</strong> {{ transaction?.description }}</p>
+    </div>
+    <div class="modal-footer">
+      <button (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</div>

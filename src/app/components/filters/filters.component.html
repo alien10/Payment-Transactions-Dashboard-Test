@@ -1,0 +1,11 @@
+<div class="filters">
+  <input type="date" [(ngModel)]="startDate" (change)="onFilterChange()" />
+  <input type="date" [(ngModel)]="endDate" (change)="onFilterChange()" />
+
+  <select [(ngModel)]="selectedStatus" (change)="onFilterChange()">
+    <option value="">All</option>
+    <option value="Success">Success</option>
+    <option value="Pending">Pending</option>
+    <option value="Failed">Failed</option>
+  </select>
+</div>
